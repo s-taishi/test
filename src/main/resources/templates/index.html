@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>入力画面</title>
+</head>
+<body>
+<h1 th:text="最初の単語は：しりとり"></h1>
+	
+	<h1 th:text="'最後の文字は：'+り"></h1>
+	<div th:if="${errorMessage}" th:text="${errorMessage}"></div>
+	<h3 th:text="入力してください"></h3>
+	<h5 th:text="ひらがな・カタカナで入力"></h5>
+	<form th:action="@{/submit}" method="POST">
+		<label for="word">語句</label>
+		<input type="text" id="name" name="word" required placeholder="未入力です">
+
+		<button type="submit">送信</button>
+	</form>
+</body>
+</html>

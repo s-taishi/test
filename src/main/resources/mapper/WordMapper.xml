@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.WordMapper">
+<!--すべての語句を取得する-->
+<select id="getAllWords" resultType="com.example.demo.entity.Word">
+select id,word FROM WORDS ORDER BY id
+	</select>
+<!--	語句を追加する-->
+<insert id="insertWord" parameterType="com.example.demo.entity.Word" useGeneratedKeys="true" keyProperty="id">
+INSERT INTO WORDS (word) VALUES (#{word})
+</insert>
+</mapper>
+<!-- useGeneratedKeys="true" keyProperty="id"-->

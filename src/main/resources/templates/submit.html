@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>入力画面</title>
+</head>
+<body>
+	<h1 th:text="${inputword}"></h1>
+	<br>
+	<h1	th:text="'最後の文字：'+${lc}"></h1>
+	<h5 th:text="ひらがな・カタカナで入力"></h5>
+	
+		<form th:action="@{/submit}" method="POST">
+			<label for="word">語句</label>
+			<input type="text" id="name" name="word" required placeholder="未入力です">
+			<button type="submit">送信</button>
+		</form>
+<!--		エラー表示-->
+<div th:if="${errorMessage}" th:text="${errorMessage}" style=color:red></div>
+<!--		<ul th:if="${fields.hasErrors('*')}">-->
+<!--		<li th:each="err:${#fields.erros('*')}" th:text="${err}"></li></ul>-->
+
+</body>
+</html>
